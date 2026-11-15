@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', sans-serif;
+}
+
+body {
+    background: #111;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+#cabecalho {
+    background-color: #000;
+    padding: 2px;
+}
+
+#cabecalho img {
+    width: 100px;
+    transition: all 0.3s linear;
+}
+
+#cabecalho img:hover {
+    transform: scale(1.05);
+}
+
+#cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cabecalho #menu ul {
+    display: flex;
+}
+
+#cabecalho #menu ul li {
+    list-style: none;
+}
+
+#cabecalho #menu a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background: #ab0808;
+    color: #e0e0e0;
+    transition: 0.3s;
+}
+
+#cabecalho #menu a:hover {
+    background-color: #d30909;
+}
+
+/* MENU MOBILE */
+.menu-toggle {
+    display: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ab1919;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px #b01616, inset 0 0 10px rgba(211, 9, 9, 0.5);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+    /* mostrar botão */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* esconder menu por padrão */
+    #cabecalho #menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 250px;
+        background: rgba(0, 0, 0, 0.95);
+        border: 1px solid #c41111;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 9999;
+    }
+
+    /* quando JS ativa */
+    #cabecalho #menu.ativo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cabecalho #menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #E5E4E2;
+    -webkit-text-stroke: 0.3px #bc1c1c;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: #E5E4E2;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+#intro,
+#home,
+#personagens,
+#galeria,
+#desenvolvedora,
+#recursos {
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#intro {
+    background-image: url(../images/amegakure.gif);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+}
+
+#intro .entrar {
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    transform: translate(-50% -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+}
+
+.botao {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+}
+
+@keyframes piscar {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.botao {
+    animation: piscar 1s infinite;
+    text-align: center;
+    justify-content: center;
+}
+
+.botao::before,
+.botao::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 2px;
+    background: #a22b2b;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao::before {
+    top: 0px;
+}
+
+.botao::after {
+    bottom: 0px;
+}
+
+#home {
+    background-image: url(../images/historia_akt.webp);
+}
+
+.historia {
+    text-align: center;
+    border-radius: 30px;
+    background: #00000091;
+    padding: 10px;
+    border: 1px solid #c82222;
+}
+
+.historia img:hover {
+    transform: scale(1.03);
+}
+
+.conteudo {
+    width: 100%;
+    text-align: justify;
+    border-radius: 10px;
+    background: #00000091;
+    padding: 20px;
+    border: 1px solid #f03434;
+    margin-top: 10px;
+    display: block;
+}
+
+.conteudo img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    display: block;
+}
+
+#personagens {
+    background-image: url(../images/personagens/capa.webp);
+}
+
+.personagens-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.personagem-card {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.personagem-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform .3s ease;
+}
+
+.personagem-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+    transform: translateY(35%);
+    transition: transform 0.5s ease;
+}
+
+.personagem-linha{
+    width: 0;
+    height: 2px;
+    background: #ff0101;
+    margin-bottom: 15px;
+    transition: width 0.4s ease 0.15s;
+}
+
+.personagem-overlay h3 {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.personagem-overlay p {
+    font-size: 0.85rem;
+    color: rgba(255, 0, 0, 0.65);
+    line-height: 1.7;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
+}
+
+.personagem-card:hover img {
+    transform: scale(1.03);
+}
+
+.personagem-card:hover .personagem-overlay {
+    transform: translateY(0);
+}
+
+.personagem-card:hover .personagem-linha {
+    width: 80px;
+}
+
+.personagem-card:hover .personagem-overlay p {
+    opacity: 1;
+}
+
+#galeria {
+    background-image: url(../images/galeria.webp);
+}
+
+.galeria,
+.galeria1,
+.perso {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 20px;
+    background: #000000e6;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #f03a3a;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.galeria-grid,
+.galeria-gd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#titulo3 {
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform .3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.03);
+}
+
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: pointer !important;
+}
+
+#desenvolvedora {
+    background-image: url(../images/kishimoto.webp);
+}
+
+.dev {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    background: #171111e6;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #630000;
+    width: 1000px;
+    transform: translateX(150px);
+}
+
+#recursos {
+    background-image: url(../images/recursoss.jpg);
+}
+
+.recursos {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 20px;
+    background: #000000e6;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #b30000;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#banners img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    object-position: center top;
+    background-color: #000;
+}
+
+#rodape {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Menu */
+    #cabecalho .container {
+        flex-wrap: wrap;
+    }
+
+    /* Intro */
+    #intro .entrar {
+        left: 50% !important;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+
+    /* História */
+    .historia {
+        width: 100%;
+    }
+
+    /* Conteúdo */
+    .conteudo {
+        padding: 15px;
+    }
+
+    .conteudo img {
+        width: 100%;
+    }
+
+    /* Personagens */
+    .personagens-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .personagem-card {
+        height: 400px;
+    }
+
+    /* Galeria */
+    .galeria-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .item img {
+        height: auto;
+    }
+
+    /* Desenvolvedora */
+    .dev {
+        width: 95% !important;
+        transform: none !important;
+    }
+
+    /* Recursos */
+    .recursos {
+        width: 95% !important;
+    }
+
+    /* Banner */
+    #banners img {
+        height: auto;
+    }
+
+    /* Fundos */
+    #intro,
+    #home,
+    #personagens,
+    #galeria,
+    #desenvolvedora,
+    #recursos {
+        background-attachment: scroll;
+    }
+
+    /* Textos */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* =========================
+       INTRO
+       ========================= */
+
+    #intro {
+        background-position: center center;
+        background-attachment: scroll;
+    }
+
+    #intro .entrar {
+        position: absolute;
+        top: 50%;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        gap: 25px;
+        text-align: center;
+    }
+
+    #intro .entrar img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .botao {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+
+    .botao::before,
+    .botao::after {
+        width: 130%;
+    }
+}
